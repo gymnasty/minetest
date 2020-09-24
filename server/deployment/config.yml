@@ -1670,12 +1670,12 @@ data:
     #    When running a server, clients connecting with this name are admins.
     #    When starting from the main menu, this is overridden.
     #    type: string
-    # name =
+    name = tommy
 
     #    Set the language. Leave empty to use the system language.
     #    A restart is required after changing this.
     #    type: enum values: , ar, ca, cs, da, de, dv, el, en, eo, es, et, eu, fil, fr, hu, id, it, ja, ja_KS, jbo, kk, kn, lo, lt, ms, my, nb, nl, nn, pl, pt, pt_BR, ro, ru, sl, sr_Cyrl, sv, sw, th, tr, uk, vi
-    # language =
+    language = ja
 
     #    Level of logging to be written to debug.txt:
     #    -    <nothing> (no logging)
@@ -1686,7 +1686,7 @@ data:
     #    -    info
     #    -    verbose
     #    type: enum values: , none, error, warning, action, info, verbose
-    # debug_log_level = action
+    debug_log_level = warning
 
     #    If the file size of debug.txt exceeds the number of megabytes specified in
     #    this setting when it is opened, the file is moved to debug.txt.1,
