@@ -2,6 +2,7 @@
 SERVER_DIR	:= ./server
 DEPLOY_DIR	:= $(SERVER_DIR)/deployment
 MODS_DIR	:= ./mods
+GAMES_DIR	:= ./games
 
 # k8s
 K8S_NAMESPACE	:= minetest
@@ -28,3 +29,7 @@ undeploy: ## undeploy minetest server
 .PHONY: copy-mods
 copy-mods: ## copy mods to minetest server
 	@kubectl cp $(MODS_DIR) --namespace $(K8S_NAMESPACE) $(shell kubectl get pod --namespace $(K8S_NAMESPACE) --selector app=minetest -o jsonpath="{.items[0].metadata.name}"):/var/lib/minetest/.minetest
+
+.PHONY: copy-games
+copy-games: ## copy games to minetest server
+	@kubectl cp $(GAMES_DIR) --namespace $(K8S_NAMESPACE) $(shell kubectl get pod --namespace $(K8S_NAMESPACE) --selector app=minetest -o jsonpath="{.items[0].metadata.name}"):/var/lib/minetest/.minetest
