@@ -20,8 +20,16 @@ spec:
         kubernetes.io/hostname: compute-2
       containers:
         - image: registry.gitlab.com/minetest/minetest/server:master
-          #command: ["sh", "-c"]
-          #args: ["sleep 100000"]
+          command:
+            [
+              "/usr/local/bin/minetestserver",
+              "--config",
+              "/etc/minetest/minetest.conf",
+              "--gameid",
+              "mineclone2",
+              "--world",
+              "mineclone2",
+            ]
           name: minetest
           ports:
             - containerPort: 30000
