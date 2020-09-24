@@ -34,6 +34,11 @@ kubectl cp $(pod名):/var/lib/minetest/.minetest/worlds/world/world.mt world.mt
 kubectl cp world.mt $(pod名):/var/lib/minetest/.minetest/worlds/world/world.mt
 ```
 
+#### games のインストール
+
+サーバの `/var/lib/minetest/.minetest/games` ディレクトリに games のディレクトリを入れると追加した games を利用できるようになる。
+起動するゲームは `server/deployment/deploy.yml` の command で指定する。
+
 ## その他
 
 ### データフォルダ
